@@ -17,29 +17,34 @@ import GalleryVideo from "./pages/Gallery/GaleriVideo";
 import PpdbPage from "./pages/PPDB";
 import KontakPage from "./pages/Kontak";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "sejarah", element: <ProfileSejarah /> },
+        { path: "visi-misi", element: <ProfileVisiMisi /> },
+        { path: "struktur-organisasi", element: <ProfileStrukturOrganisasi /> },
+        { path: "guru-staf", element: <ProfileGuruStaf /> },
+        { path: "fasilitas", element: <ProfileFasilitas /> },
+        { path: "berita", element: <BeritaPage /> },
+        { path: "pengumuman", element: <PengumumanPage /> },
+        { path: "agenda", element: <AgendaPage /> },
+        { path: "kegiatan-sekolah", element: <KegiatanSekolahPage /> },
+        { path: "prestasi", element: <PrestasiPage /> },
+        { path: "ekstrakurikuler", element: <EkstrakurikulerPage /> },
+        { path: "galeri-foto", element: <GaleriFotoPage /> },
+        { path: "galeri-video", element: <GalleryVideo /> },
+        { path: "ppdb", element: <PpdbPage /> },
+        { path: "kontak", element: <KontakPage /> },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <MainLayout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "sejarah", element: <ProfileSejarah /> },
-      { path: "visi-misi", element: <ProfileVisiMisi /> },
-      { path: "struktur-organisasi", element: <ProfileStrukturOrganisasi /> },
-      { path: "guru-staf", element: <ProfileGuruStaf /> },
-      { path: "fasilitas", element: <ProfileFasilitas /> },
-      { path: "berita", element: <BeritaPage /> },
-      { path: "pengumuman", element: <PengumumanPage /> },
-      { path: "agenda", element: <AgendaPage /> },
-      { path: "kegiatan-sekolah", element: <KegiatanSekolahPage /> },
-      { path: "prestasi", element: <PrestasiPage /> },
-      { path: "ekstrakurikuler", element: <EkstrakurikulerPage /> },
-      { path: "galeri-foto", element: <GaleriFotoPage /> },
-      { path: "galeri-video", element: <GalleryVideo /> },
-      { path: "ppdb", element: <PpdbPage /> },
-      { path: "kontak", element: <KontakPage /> },
-    ],
-  },
-]);
+    basename: "/Profile-Sekolah",
+  }
+);
 
 export default router;

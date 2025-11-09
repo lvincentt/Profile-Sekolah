@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom"; // ⬅️ penting
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation(); // untuk tahu path halaman saat ini
+  const location = useLocation();
 
   let timeoutId = null;
 
@@ -27,32 +27,30 @@ export default function Navbar() {
 
   const dropdowns = {
     profil: [
-      { name: "Sejarah", href: "/sejarah" },
-      { name: "Visi & Misi", href: "/visi-misi" },
-      { name: "Struktur Organisasi", href: "/struktur-organisasi" },
-      { name: "Guru & Staf", href: "/guru-staf" },
-      { name: "Fasilitas", href: "/fasilitas" },
+      { name: "Sejarah", href: "sejarah" },
+      { name: "Visi & Misi", href: "visi-misi" },
+      { name: "Struktur Organisasi", href: "struktur-organisasi" },
+      { name: "Guru & Staf", href: "guru-staf" },
+      { name: "Fasilitas", href: "fasilitas" },
     ],
     berita: [
-      { name: "Berita", href: "/berita" },
-      { name: "Pengumuman", href: "/pengumuman" },
-      { name: "Agenda", href: "/agenda" },
+      { name: "Berita", href: "berita" },
+      { name: "Pengumuman", href: "pengumuman" },
+      { name: "Agenda", href: "agenda" },
     ],
     kegiatan: [
-      { name: "Kegiatan Sekolah", href: "/kegiatan-sekolah" },
-      { name: "Prestasi", href: "/prestasi" },
-      { name: "Ekstrakurikuler", href: "/ekstrakurikuler" },
+      { name: "Kegiatan Sekolah", href: "kegiatan-sekolah" },
+      { name: "Prestasi", href: "prestasi" },
+      { name: "Ekstrakurikuler", href: "ekstrakurikuler" },
     ],
     galeri: [
-      { name: "Foto", href: "/galeri-foto" },
-      { name: "Video", href: "/galeri-video" },
+      { name: "Foto", href: "galeri-foto" },
+      { name: "Video", href: "galeri-video" },
     ],
   };
 
-  // ✅ Cek apakah halaman saat ini adalah Home
   const isHome = location.pathname === "/";
 
-  // Tentukan style dasar
   const navbarStyle =
     isHome && !scrolled
       ? "bg-transparent text-white"
@@ -65,8 +63,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
               isHome && !scrolled
                 ? "text-white hover:text-red-200"
@@ -74,7 +72,7 @@ export default function Navbar() {
             }`}
           >
             SMP Dummy School
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <ul
@@ -111,12 +109,12 @@ export default function Navbar() {
                   >
                     {items.map((item) => (
                       <li key={item.name}>
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.href}
                           className="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors duration-200"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -126,8 +124,8 @@ export default function Navbar() {
 
             {/* Non-dropdown Menu */}
             <li>
-              <a
-                href="/ppdb"
+              <Link
+                to="ppdb"
                 className={`py-2 transition-colors duration-200 ${
                   isHome && !scrolled
                     ? "hover:text-red-200"
@@ -135,11 +133,11 @@ export default function Navbar() {
                 }`}
               >
                 PPDB
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/kontak"
+              <Link
+                to="kontak"
                 className={`py-2 transition-colors duration-200 ${
                   isHome && !scrolled
                     ? "hover:text-red-200"
@@ -147,7 +145,7 @@ export default function Navbar() {
                 }`}
               >
                 Kontak
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -180,12 +178,13 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg animate-in slide-in-from-top duration-300">
           <div className="px-4 pt-2 pb-6 space-y-1">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block py-3 px-4 text-gray-900 font-semibold hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors duration-200"
+              onClick={() => setMenuOpen(false)}
             >
               Beranda
-            </a>
+            </Link>
 
             {Object.entries(dropdowns).map(([key, items]) => (
               <div
@@ -202,31 +201,34 @@ export default function Navbar() {
                   </summary>
                   <div className="pl-4 mt-1 space-y-1">
                     {items.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className="block py-2 px-4 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
+                        onClick={() => setMenuOpen(false)}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </details>
               </div>
             ))}
 
-            <a
-              href="/ppdb"
+            <Link
+              to="ppdb"
               className="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors duration-200"
+              onClick={() => setMenuOpen(false)}
             >
               PPDB
-            </a>
-            <a
-              href="/kontak"
+            </Link>
+            <Link
+              to="kontak"
               className="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors duration-200"
+              onClick={() => setMenuOpen(false)}
             >
               Kontak
-            </a>
+            </Link>
           </div>
         </div>
       )}

@@ -2,9 +2,6 @@
 import { Toaster, toast } from "react-hot-toast";
 import { Share2, CheckCircle2, XCircle } from "lucide-react";
 
-/**
- * Global toast component — tinggal dipasang sekali di App.jsx
- */
 export function ToastContainer() {
   return (
     <Toaster
@@ -25,9 +22,6 @@ export function ToastContainer() {
   );
 }
 
-/**
- * Custom toast helpers biar bisa dipanggil langsung
- */
 export const showToast = {
   success: (message) =>
     toast.custom(

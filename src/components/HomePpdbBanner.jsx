@@ -1,7 +1,6 @@
 export default function HomePpdbBanner() {
   return (
     <section className="relative flex flex-col items-center justify-center text-center text-white bg-gradient-to-br from-maroon via-maroon/90 to-red-800 min-h-screen overflow-hidden">
-      {/* Background Pattern Lembut */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="absolute inset-0"
@@ -53,8 +52,6 @@ export default function HomePpdbBanner() {
           <span className="font-semibold text-white">30 Juni 2025</span>
         </p>
       </div>
-
-      {/* Elemen Dekoratif Halus */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
     </section>
   );
