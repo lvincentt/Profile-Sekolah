@@ -3,27 +3,27 @@ export default function ProfileStrukturOrganisasi() {
     {
       nama: "Drs. Antonius Raharjo",
       jabatan: "Kepala Sekolah",
-      foto: "/staff/kepala-sekolah.jpg",
+      foto: "../../assets/images/Man.webp",
     },
     {
       nama: "Maria Lestari, S.Pd",
       jabatan: "Wakil Kepala Sekolah",
-      foto: "/staff/wakil-kepala.jpg",
+      foto: "../../assets/images/Woman.webp",
     },
     {
       nama: "Yohanes Budi, S.Pd",
       jabatan: "Koordinator Kurikulum",
-      foto: "/staff/kurikulum.jpg",
+      foto: "../../assets/images/Man.webp",
     },
     {
       nama: "Sinta Widya, S.Pd",
       jabatan: "Koordinator Kesiswaan",
-      foto: "/staff/kesiswaan.jpg",
+      foto: "../../assets/images/Woman.webp",
     },
     {
       nama: "Andreas Tanu, S.Kom",
       jabatan: "Koordinator IT & Multimedia",
-      foto: "/staff/it.jpg",
+      foto: "../../assets/images/Man.webp",
     },
   ];
 
