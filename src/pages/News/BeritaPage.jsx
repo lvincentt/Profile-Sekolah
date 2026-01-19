@@ -1,6 +1,6 @@
-import foto1 from "../../assets/images/placeholder4.jpg";
-import foto2 from "../../assets/images/placeholder5.jpg";
-import foto3 from "../../assets/images/placeholder6.jpg";
+import foto1 from "../../assets/images/placeholder4.webp";
+import foto2 from "../../assets/images/placeholder5.webp";
+import foto3 from "../../assets/images/placeholder6.webp";
 
 export default function BeritaPage() {
   const beritaList = [

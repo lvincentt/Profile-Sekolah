@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import foto1 from "../assets/images/placeholder1.jpg";
-import foto2 from "../assets/images/placeholder2.jpg";
-import foto3 from "../assets/images/placeholder3.jpg";
+import foto1 from "../assets/images/placeholder1.webp";
+import foto2 from "../assets/images/placeholder2.webp";
+import foto3 from "../assets/images/placeholder3.webp";
 
 export default function HeroSection() {
   const images = [foto1, foto2, foto3];

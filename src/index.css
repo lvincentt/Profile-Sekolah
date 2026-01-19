@@ -31,3 +31,13 @@
 .animate-leave {
   animation: leave 0.2s ease-in forwards;
 }
+
+html,
+body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+main {
+  overflow: visible !important;
+}

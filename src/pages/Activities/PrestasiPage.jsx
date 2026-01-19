@@ -1,7 +1,7 @@
 import { Trophy, Calendar, Award, Star, ArrowRight } from "lucide-react";
-import foto1 from "../../assets/images/placeholder4.jpg";
-import foto2 from "../../assets/images/placeholder5.jpg";
-import foto3 from "../../assets/images/placeholder6.jpg";
+import foto1 from "../../assets/images/placeholder4.webp";
+import foto2 from "../../assets/images/placeholder5.webp";
+import foto3 from "../../assets/images/placeholder6.webp";
 
 export default function PrestasiPage() {
   const prestasiList = [
@@ -108,7 +108,7 @@ export default function PrestasiPage() {
                 {/* Bidang Badge */}
                 <div
                   className={`absolute top-4 left-4 bg-gradient-to-r ${getBidangColor(
-                    item.bidang
+                    item.bidang,
                   )} text-white px-3 py-2 rounded-xl shadow-lg`}
                 >
                   <div className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function PrestasiPage() {
                 {/* Tingkat Badge */}
                 <div
                   className={`absolute top-4 right-4 ${getTingkatColor(
-                    item.tingkat
+                    item.tingkat,
                   )} px-3 py-2 rounded-xl text-sm font-semibold shadow-lg`}
                 >
                   {item.tingkat}

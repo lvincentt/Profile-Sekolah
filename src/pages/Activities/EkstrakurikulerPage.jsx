@@ -8,12 +8,12 @@ import {
   Heart,
 } from "lucide-react";
 
-import dance from "../../assets/images/dance.jpg";
-import pramuka from "../../assets/images/pramuka.jpg";
-import basket from "../../assets/images/basket.jpg";
-import paduanSuara from "../../assets/images/choirs.jpg";
-import jurnalistik from "../../assets/images/journalist.jpg";
-import robotik from "../../assets/images/robotic.jpg";
+import dance from "../../assets/images/dance.webp";
+import pramuka from "../../assets/images/pramuka.webp";
+import basket from "../../assets/images/basket.webp";
+import paduanSuara from "../../assets/images/choirs.webp";
+import jurnalistik from "../../assets/images/journalist.webp";
+import robotik from "../../assets/images/robotic.webp";
 
 export default function EkstrakurikulerPage() {
   const ekskulList = [
@@ -154,7 +154,7 @@ export default function EkstrakurikulerPage() {
                 {/* Kategori Badge */}
                 <div
                   className={`absolute top-4 left-4 bg-gradient-to-r ${getKategoriColor(
-                    item.kategori
+                    item.kategori,
                   )} text-white px-4 py-2 rounded-xl shadow-lg`}
                 >
                   <div className="flex items-center gap-2">
